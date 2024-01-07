@@ -1,0 +1,12 @@
+--- # Installing a package playbook
+- hosts: webservers
+  user: ansible
+  become: true
+  connection: ssh
+
+  tasks:
+    - name: Install docker s/w on host servers
+      yum: 
+        name: docker 
+        state: installed
+

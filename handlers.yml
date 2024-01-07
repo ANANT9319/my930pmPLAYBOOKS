@@ -1,0 +1,17 @@
+--- # my  handelers playbook
+- hosts: all
+  become: true
+
+  tasks:
+    - name: installing httpd into webservers
+      action: yum name=httpd state=present
+      notify: start httpd service
+
+
+  handlers: 
+    - name: start httpd service
+      action: service name=httpd state=started
+
+
+
+# use the same work in notify and handler section (name) so that at the time of executing this task it will notify (Here if it will execute first task then it will execute second task this is called dependency)

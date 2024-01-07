@@ -1,0 +1,15 @@
+--- # multiple use account create playbook
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: multiple user creation
+      user: name='{{item}}' state=present
+      with_items:
+        - Raj
+        - xyz
+        - Ramesh
+        - Anu
+        - Usha
+        - Rahim
+        - Kavite

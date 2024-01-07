@@ -1,0 +1,9 @@
+---
+
+- name: Install apache2 and httpd
+  hosts: webservers
+  become:  yes
+
+
+  roles:
+    - setup-apache-role

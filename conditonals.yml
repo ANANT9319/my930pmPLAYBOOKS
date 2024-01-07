@@ -1,0 +1,18 @@
+--- # Conditonals playbook
+- hosts: webservers
+  become: true
+
+
+  tasks: 
+    - name: install apache for debian
+      command: apt-get install apache2 -y
+      when: ansible_os_family == "Debian"
+
+
+    - name: install apache for RedHat
+      command: yum install httpd -y
+      when: ansible_os_family == "RedHat"
+        
+        
+        
+# here idempotency will not follow because here we are using normal linux command

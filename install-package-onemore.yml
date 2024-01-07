@@ -1,0 +1,9 @@
+--- # Installing a package playbook
+- hosts: webservers
+  #  become: true
+
+  tasks:
+    - name: Install packages on hosts
+      yum:
+        name: git
+        state: present

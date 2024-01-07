@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+
+
+
+  tasks:
+    - name: creating a file with ansible playbook
+      file: path=/tmp/hari.txt state=file
+
+    - name: creating a folder with ansible playbook
+      file: path=/tmp/raj123 state=directory
+
+    - name: copying a file to hosts
+      copy: src=./file100 dest=/home/ansible
+
+
+# below syntex will not follow the idempotency concept because we used linux command
+
+
+#  tasks:
+#    - name: creating a file with ansible playbook
+#      file: path=/tmp/hari.txt state=touch
+

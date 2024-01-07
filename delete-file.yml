@@ -1,0 +1,10 @@
+--- # delete a file playbook
+- hosts: all
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: deleting a file
+      file:
+        path: /home/ansible/myfile
+        state: absent

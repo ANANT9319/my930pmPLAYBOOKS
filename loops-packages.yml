@@ -1,0 +1,18 @@
+--- # install multiple packages / loops
+- hosts: webservers
+  become: true
+
+  tasks:
+    - name: install s/w's
+      yum: name='{{item}}' state=installed
+      with_items:
+        - httpd
+        - tree
+        - docker
+        - java
+        - mysql
+        - git
+
+
+
+# current days it is not recommended.

@@ -1,0 +1,9 @@
+--- # ansible roles playbook
+- hosts: webservers
+  user: ansible
+  connection: ssh
+  become: yes
+
+
+  roles: 
+    - testrole 

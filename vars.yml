@@ -1,0 +1,11 @@
+--- # playbook for variable
+- hosts: webservers
+  become: yes
+
+  vars:
+    pkgname: httpd
+
+
+  tasks:
+    - name: install httpd
+      action: yum name='{{pkgname}}' state=installed

@@ -1,0 +1,12 @@
+--- # delete a directory playbook
+- hosts: all
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: deleting a directory
+      file:
+        path: /home/ansible/haridir
+        state: absent
+
+

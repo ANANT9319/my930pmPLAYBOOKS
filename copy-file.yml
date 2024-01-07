@@ -1,0 +1,18 @@
+--- # Playbook for copy a file
+- hosts: webservers
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: copy an file to host servers
+      copy:
+        src: /home/ansible/index.html
+        dest: /home/ansible
+        owner: rohit
+        
+
+
+
+
+# owener is totally optional if we want we can give
